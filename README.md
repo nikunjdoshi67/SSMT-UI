@@ -35,7 +35,7 @@ $curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 **Install Node JS**
 
 ```sh
-$sudo apt-get install -y nodejs**
+$sudo apt-get install -y nodejs
 ```
 
 **Check the Version of Node JS and npm Package Manager**
