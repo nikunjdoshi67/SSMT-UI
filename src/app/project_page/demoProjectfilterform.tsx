@@ -72,7 +72,7 @@ class DemoProjectFilterForm extends React.Component<myProps, myState> {
     if (onSubmit) {
       apiUrl = apiUrl + '/' + startDate + '/' + endDate;
     }
-    //console.log(apiUrl);
+    console.log(apiUrl);
 
     axios
       .get(apiUrl)
