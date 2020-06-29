@@ -1,3 +1,10 @@
+/**
+ * SearchToolbar - Search Component to search the Project Namespaces(Names) .
+ *
+ * @version 1.0.1
+ * @author [Nikunj Doshi](https://github.com/nikunjdoshi67)
+ */
+
 import React from 'react';
 import '@patternfly/react-core/dist/styles/base.css';
 import {
@@ -54,6 +61,11 @@ class SearchToolBar extends React.Component<myProps, myState> {
       filterTag: ''
     })
   }
+  
+  /**
+   * @param  Project Name to be searched
+   * @return Searched Data from regex function
+   */
 
   render() {
     return (
@@ -77,6 +89,9 @@ class SearchToolBar extends React.Component<myProps, myState> {
   reset() {
     this.setState({...this.state, filterTag:"", displayData: this.props.data, mainData: this.props.data }) 
   }
+
+  /** Regex Functionality implemented for the Search Toolbar. */
+
   search(filterTag: string){
     const tags=filterTag.trim().split(" ");
     const regExps: Array<RegExp>=tags.map(tag=> new RegExp(tag));

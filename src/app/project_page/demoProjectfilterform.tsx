@@ -1,3 +1,10 @@
+/**
+ * DemoProjectFilterForm - Filters the Data rendered through backend or API .
+ *
+ * @version 1.0.1
+ * @author [Nikunj Doshi](https://github.com/nikunjdoshi67)
+ */
+
 import React from 'react';
 import { Grid, GridItem, Form, ActionGroup } from '@patternfly/react-core';
 import axios from 'axios';
@@ -8,6 +15,9 @@ import { Button } from '@patternfly/react-core';
 import SearchToolBar from '@app/SearchToolbar/SearchToolBar';
 
 type myProps = {};
+
+/** If the Backend changes then one should add the add the corresponding fields in the state. */
+
 type myState = {
   startHrs: number;
   endHrs: number;
@@ -20,6 +30,9 @@ type myState = {
   err: string | null;
   isLoaded: boolean;
 };
+
+/** Need to use Data Object instead of Object so that in typescript we could use the attributes */
+
 export type dataObject = {
   namespace: string;
   activationTime: number;
@@ -33,10 +46,17 @@ class DemoProjectFilterForm extends React.Component<myProps, myState> {
   constructor(myProps) {
     super(myProps);
 
+  /** Adjusted the Start Date as per the UTC Format.
+   * If we use some other Date & time Pickr then we dont need to initialize the Minutes and Seconds
+   * Use the attributes from those Time Picker
+   */
+  
     const startDate = new Date();
     startDate.setHours(new Date().getHours() - 1);
     startDate.setMinutes(0);
     startDate.setSeconds(0);
+
+     /** Adjusted the Start Date as per the UTC Format. */
 
     const endDate = new Date();
     endDate.setHours(new Date().getHours());

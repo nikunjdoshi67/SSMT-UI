@@ -1,9 +1,22 @@
+/**
+ * Dashboard Table Page to display the Data in Table.
+ *
+ * @version 1.0.1
+ * @author [Nikunj Doshi](https://github.com/nikunjdoshi67)
+ */
+
 import React from 'react';
 import '@patternfly/react-core/dist/styles/base.css';
 import { Table, TableHeader, TableBody, TableVariant, TableText } from '@patternfly/react-table';
 import { Link } from 'react-router-dom';
 import { dataObject } from '@app/project_page/demoProjectfilterform';
 import {DemoProjectFilterForm} from '@app/project_page/demoProjectfilterform';
+
+ /**
+   * Table Used in Dashboard to Display the Data.
+   * @param  Filter Data from the API
+   * @return Table Data 
+   */
 
 
 type myProps = {
@@ -27,6 +40,8 @@ class DashboardTable extends React.Component<myProps, myState> {
     super(myProps);
 
     const rowData: Array<row> = [];
+
+     /** Specified the Table Columns and Rows structure. */
 
     myProps.tableData.forEach(dataRow => {
       rowData.push({
